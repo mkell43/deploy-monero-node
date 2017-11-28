@@ -1,0 +1,13 @@
+---
+- hosts: all
+  remote_user: ansibledo
+  become: yes
+  vars:
+    xmrig_pool_url: stratum+tcp://mine.xmrpool.net:5555
+    xmrig_pool_username: 4Adq5EZWCJ2jh4kttRSoa3KegN3K3KVnkZdATgd1XQcnZt7cJmggXHkjXqrT3anyZ22j7DEE74GkbVcQFyH2nNiC3c7HGvC
+    xmrig_pool_password: "{{ ansible_hostname }}_cpu:mike.k@blu-web.com"
+    xmrig_donate_level: 2
+  roles:
+    - mkell43.monero-node
+    - mkell43.docker
+    - mkell43.docker-xmrig-miner
